@@ -1,0 +1,43 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+    <shortcut
+        android:shortcutId="first"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/first_short"
+        android:shortcutLongLabel="@string/first_long">
+        <!-- targetClass指定了点击该项菜单后要打开哪个活动页面 -->
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.example.chapter04"
+            android:targetClass="com.example.chapter04.ActStartActivity" />
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="second"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/second_short"
+        android:shortcutLongLabel="@string/second_long">
+        <!-- targetClass指定了点击该项菜单后要打开哪个活动页面 -->
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.example.chapter04"
+            android:targetClass="com.example.chapter04.JumpFirstActivity" />
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+
+    <shortcut
+        android:shortcutId="third"
+        android:enabled="true"
+        android:icon="@mipmap/ic_launcher"
+        android:shortcutShortLabel="@string/third_short"
+        android:shortcutLongLabel="@string/third_long">
+        <!-- targetClass指定了点击该项菜单后要打开哪个活动页面 -->
+        <intent
+            android:action="android.intent.action.VIEW"
+            android:targetPackage="com.example.chapter04"
+            android:targetClass="com.example.chapter04.LoginInputActivity" />
+        <categories android:name="android.shortcut.conversation"/>
+    </shortcut>
+</shortcuts>

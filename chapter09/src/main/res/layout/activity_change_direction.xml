@@ -1,0 +1,15 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/tv_monitor"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="请旋转手机使屏幕在竖屏与横屏之间切换"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+</LinearLayout>

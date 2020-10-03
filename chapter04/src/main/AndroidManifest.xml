@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chapter04">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <!-- 指定快捷方式。在桌面上长按应用图标，就会弹出@xml/shortcuts所描述的快捷菜单 -->
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+        <activity android:name=".ActStartActivity" />
+        <activity android:name=".ActFinishActivity" />
+        <activity android:name=".ActLifeActivity" />
+        <activity android:name=".ActNextActivity" />
+        <activity
+            android:name=".JumpFirstActivity"
+            android:launchMode="standard" />
+        <activity android:name=".JumpSecondActivity" />
+        <activity android:name=".LoginInputActivity" />
+        <activity android:name=".LoginSuccessActivity" />
+        <activity android:name=".ActionUriActivity" />
+        <activity android:name=".ActSendActivity" />
+        <activity android:name=".ActReceiveActivity" />
+        <activity android:name=".ActRequestActivity" />
+        <activity android:name=".ActResponseActivity" />
+        <activity android:name=".ReadStringActivity" />
+        <activity android:name=".MetaDataActivity">
+
+            <!-- <meta-data android:name="weather" android:value="晴天" /> -->
+            <meta-data
+                android:name="weather"
+                android:value="@string/weather_str" />
+        </activity>
+    </application>
+
+</manifest>

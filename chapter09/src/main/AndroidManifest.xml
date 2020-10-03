@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chapter09">
+    <!-- 震动 -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity" android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".BroadStandardActivity" />
+        <activity android:name=".BroadOrderActivity" />
+        <activity android:name=".SystemMinuteActivity" />
+        <activity android:name=".SystemNetworkActivity" />
+        <activity android:name=".BroadStaticActivity" />
+        <activity android:name=".AlarmActivity" />
+        <activity android:name=".ActTestActivity" />
+        <activity
+            android:name=".ChangeDirectionActivity"
+            android:configChanges="orientation|screenLayout|screenSize" />
+        <activity
+            android:name=".ReturnDesktopActivity"
+            android:configChanges="orientation|screenLayout|screenSize"
+            android:supportsPictureInPicture="true"
+            android:theme="@style/AppCompatTheme" />
+
+        <receiver
+            android:name=".receiver.ShockReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.chapter09.shock" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

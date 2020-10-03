@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.chapter11">
+
+    <!-- 允许前台服务 -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <!-- 允许访问互联网 -->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- 允许修改徽章（角标数字） -->
+    <uses-permission android:name="com.huawei.android.launcher.permission.CHANGE_BADGE" />
+
+    <application
+        android:name=".MainApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".NotifySimpleActivity" />
+        <activity android:name=".NotifyCounterActivity" />
+        <activity android:name=".NotifyChannelActivity" />
+        <activity android:name=".NotifyMarkerActivity" />
+        <activity android:name=".ServiceNormalActivity" />
+        <activity android:name=".BindImmediateActivity" />
+        <activity android:name=".BindDelayActivity" />
+        <activity android:name=".ForegroundServiceActivity" />
+        <activity android:name=".HandlerMessageActivity" />
+        <activity android:name=".AsyncTaskActivity" />
+        <activity android:name=".IntentServiceActivity" />
+        <activity android:name=".NotifyRemindActivity" />
+        <activity android:name=".GoodsLogisticsActivity" android:theme="@style/AppCompatTheme" />
+
+        <service android:name=".service.NormalService"
+            android:enabled="true" android:exported="true"></service>
+        <service android:name=".service.BindImmediateService" />
+        <service android:name=".service.BindDelayService" />
+        <service android:name=".service.MusicService" />
+        <service android:name=".service.AsyncService" />
+        <service android:name=".service.RemindIntentService" />
+    </application>
+
+</manifest>
