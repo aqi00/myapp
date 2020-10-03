@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/myapp.iml" filepath="$PROJECT_DIR$/myapp.iml" group="myapp" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="myapp/app" />
       <module fileurl="file://$PROJECT_DIR$/chapter02/chapter02.iml" filepath="$PROJECT_DIR$/chapter02/chapter02.iml" group="myapp/chapter02" />
       <module fileurl="file://$PROJECT_DIR$/chapter03/chapter03.iml" filepath="$PROJECT_DIR$/chapter03/chapter03.iml" group="myapp/chapter03" />
@@ -18,6 +17,7 @@
       <module fileurl="file://$PROJECT_DIR$/chapter13/chapter13.iml" filepath="$PROJECT_DIR$/chapter13/chapter13.iml" group="myapp/chapter13" />
       <module fileurl="file://$PROJECT_DIR$/chapter14/chapter14.iml" filepath="$PROJECT_DIR$/chapter14/chapter14.iml" group="myapp/chapter14" />
       <module fileurl="file://$PROJECT_DIR$/chapter15/chapter15.iml" filepath="$PROJECT_DIR$/chapter15/chapter15.iml" group="myapp/chapter15" />
+      <module fileurl="file://$PROJECT_DIR$/myapp.iml" filepath="$PROJECT_DIR$/myapp.iml" group="myapp" />
     </modules>
   </component>
 </project>
