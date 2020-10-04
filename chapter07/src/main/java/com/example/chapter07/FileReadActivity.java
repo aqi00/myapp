@@ -60,7 +60,7 @@ public class FileReadActivity extends AppCompatActivity implements View.OnClickL
                     Log.d(TAG, "file_path=" + file_path + ", delete failed");
                 }
             }
-            ToastUtil.show(this, "已删除私有目录下的所有文本文件");
+            ToastUtil.show(this, "已删除公共目录下的所有文本文件");
         }
     }
 
