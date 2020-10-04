@@ -1,5 +1,6 @@
 package com.example.chapter06.bean;
 
+//用户信息
 public class UserInfo {
     public long rowid; // 行号
     public int xuhao; // 序号

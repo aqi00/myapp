@@ -1,5 +1,6 @@
 package com.example.chapter06.bean;
 
+//购物车信息
 public class CartInfo {
     public long rowid; // 行号
     public int xuhao; // 序号

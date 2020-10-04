@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         findViewById(R.id.btn_app_life).setOnClickListener(this);
         findViewById(R.id.btn_app_write).setOnClickListener(this);
         findViewById(R.id.btn_app_read).setOnClickListener(this);
+        findViewById(R.id.btn_room_write).setOnClickListener(this);
+        findViewById(R.id.btn_room_read).setOnClickListener(this);
         findViewById(R.id.btn_shopping_cart).setOnClickListener(this);
     }
 
@@ -77,6 +79,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (v.getId() == R.id.btn_app_read) {
             Intent intent = new Intent(this, AppReadActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_room_write) {
+            Intent intent = new Intent(this, RoomWriteActivity.class);
+            startActivity(intent);
+        } else if (v.getId() == R.id.btn_room_read) {
+            Intent intent = new Intent(this, RoomReadActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_shopping_cart) {
             Intent intent = new Intent(this, ShoppingCartActivity.class);
