@@ -31,7 +31,7 @@ public class BroadStandardActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onClick(View v) {
         if (v.getId() == R.id.btn_send_standard) {
-            Intent intent = new Intent(STANDARD_ACTION); // 创建一个指定动作的意图
+            Intent intent = new Intent(STANDARD_ACTION); // 创建指定动作的意图
             sendBroadcast(intent); // 发送标准广播
         }
     }
