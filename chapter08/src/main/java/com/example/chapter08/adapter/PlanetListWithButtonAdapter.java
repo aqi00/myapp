@@ -78,7 +78,7 @@ public class PlanetListWithButtonAdapter extends BaseAdapter implements
 
     // 定义一个视图持有者，以便重用列表项的视图资源
     public final class ViewHolder {
-        private LinearLayout ll_item; // 声明行星项的线性视图
+        private LinearLayout ll_item; // 声明行星项的线性布局
         public ImageView iv_icon; // 声明行星图片的图像视图对象
         public TextView tv_name; // 声明行星名称的文本视图对象
         public TextView tv_desc; // 声明行星描述的文本视图对象
