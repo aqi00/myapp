@@ -35,7 +35,7 @@ public class ButtonLongclickActivity extends AppCompatActivity implements View.O
                     DateUtil.getNowTime(), ((Button) v).getText());
             tv_result.setText(desc); // 设置文本视图的文本内容
         }
-        return false;
+        return true;
     }
 
     // 定义一个长按监听器，它实现了接口View.OnLongClickListener
