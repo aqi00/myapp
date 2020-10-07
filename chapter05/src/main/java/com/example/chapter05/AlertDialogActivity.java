@@ -27,7 +27,7 @@ public class AlertDialogActivity extends AppCompatActivity implements View.OnCli
             // 创建提醒对话框的建造器
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("尊敬的用户"); // 设置对话框的标题文本
-            builder.setMessage("你真的要卸载我吗？"); // 设置对话框的信息文本
+            builder.setMessage("你真的要卸载我吗？"); // 设置对话框的内容文本
             // 设置对话框的肯定按钮文本及其点击监听器
             builder.setPositiveButton("残忍卸载", new DialogInterface.OnClickListener() {
                 @Override
