@@ -36,7 +36,7 @@ public class ShoppingCartActivity extends AppCompatActivity implements View.OnCl
     private TextView tv_count;
     private TextView tv_total_price;
     private LinearLayout ll_content;
-    private LinearLayout ll_cart; // 声明一个购物车列表的线性视图对象
+    private LinearLayout ll_cart; // 声明一个购物车列表的线性布局对象
     private LinearLayout ll_empty;
     private GoodsDBHelper mGoodsHelper; // 声明一个商品数据库的帮助器对象
     private CartDBHelper mCartHelper; // 声明一个购物车数据库的帮助器对象
