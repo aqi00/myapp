@@ -116,7 +116,7 @@ public class DownloadImageActivity extends AppCompatActivity {
         @Override
         public void run() {
             boolean isFinish = false;
-            Query down_query = new Query(); // 创建一个下载查询对象，按照下载编号进行过滤
+            Query down_query = new Query(); // 创建一个下载查询对象，按照下载编号过滤
             down_query.setFilterById(mDownloadId); // 设置下载查询对象的编号过滤器
             // 向下载管理器查询下载任务，并返回查询结果集的游标
             Cursor cursor = mDownloadManager.query(down_query);
@@ -146,7 +146,7 @@ public class DownloadImageActivity extends AppCompatActivity {
             }
             cursor.close(); // 关闭数据库游标
             if (!isFinish) { // 下载未完成，则继续刷新
-                mHandler.postDelayed(this, 50); // 延迟50毫秒后再次启动下载进度的刷新任务
+                mHandler.postDelayed(this, 50); // 延迟50毫秒后再次启动刷新任务
             } else { // 下载已完成，则显示图片
                 tpc_progress.setVisibility(View.INVISIBLE); // 隐藏文本进度圈
                 iv_image_url.setImageURI(mImageUri); // 设置图像视图的图片路径
