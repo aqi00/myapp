@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.chapter11">
 
-    <!-- 允许前台服务 -->
+    <!-- 允许前台服务（Android 9.0之后需要） -->
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <!-- 允许访问互联网 -->
     <uses-permission android:name="android.permission.INTERNET" />
