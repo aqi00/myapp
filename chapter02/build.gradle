@@ -37,7 +37,7 @@ dependencies {
     //appcompat库各版本见 https://mvnrepository.com/artifact/androidx.appcompat/appcompat
     implementation 'androidx.appcompat:appcompat:1.2.0'
     // 指定单元测试编译用的junit版本号
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
