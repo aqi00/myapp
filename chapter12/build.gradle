@@ -31,16 +31,16 @@ dependencies {
 
     // appcompat各版本见 https://mvnrepository.com/artifact/androidx.appcompat/appcompat
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.2'
     implementation 'androidx.vectordrawable:vectordrawable:1.1.0'
     implementation 'androidx.navigation:navigation-fragment:2.3.0'
     implementation 'androidx.navigation:navigation-ui:2.3.0'
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
     // material各版本见 https://mvnrepository.com/artifact/com.google.android.material/material
-    implementation 'com.google.android.material:material:1.2.0'
+    implementation 'com.google.android.material:material:1.2.1'
     // recyclerview各版本见 https://mvnrepository.com/artifact/androidx.recyclerview/recyclerview
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
     // swiperefreshlayout各版本见 https://mvnrepository.com/artifact/androidx.swiperefreshlayout/swiperefreshlayout

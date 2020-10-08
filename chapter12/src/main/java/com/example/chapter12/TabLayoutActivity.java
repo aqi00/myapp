@@ -44,7 +44,7 @@ public class TabLayoutActivity extends AppCompatActivity implements OnTabSelecte
         tab_title.addTab(tab_title.newTab().setText(mTitleArray[1]));
         tab_title.addOnTabSelectedListener(this); // 给标签布局添加标签选中监听器
         // 监听器ViewPagerOnTabSelectedListener允许直接关联某个翻页视图
-        tab_title.addOnTabSelectedListener(new ViewPagerOnTabSelectedListener(vp_content));
+        //tab_title.addOnTabSelectedListener(new ViewPagerOnTabSelectedListener(vp_content));
     }
 
     // 初始化标签翻页
