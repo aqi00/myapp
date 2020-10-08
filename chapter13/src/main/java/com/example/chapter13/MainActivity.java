@@ -49,14 +49,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent = new Intent(this, ImageDecoderActivity.class);
                 startActivity(intent);
             } else {
-                Toast.makeText(this, "图像解码器需要Android9.0或以上版本", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "图像解码器需要Android 9.0或以上版本", Toast.LENGTH_SHORT).show();
             }
         } else if (v.getId() == R.id.btn_image_special) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
                 Intent intent = new Intent(this, ImageSpecialActivity.class);
                 startActivity(intent);
             } else {
-                Toast.makeText(this, "图像解码器需要Android9.0或以上版本", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "图像解码器需要Android 9.0或以上版本", Toast.LENGTH_SHORT).show();
             }
         } else if (v.getId() == R.id.btn_audio_record) {
             Intent intent = new Intent(this, AudioRecordActivity.class);

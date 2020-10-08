@@ -50,7 +50,7 @@ public class ImageDecoderActivity extends AppCompatActivity implements View.OnCl
     // 显示解码后的图像
     private void showDecodedImage(Uri imageUri) {
         try {
-            // 利用Android9.0新增的ImageDecoder读取图片
+            // 利用Android 9.0新增的ImageDecoder读取图片
             ImageDecoder.Source source = ImageDecoder.createSource(getContentResolver(), imageUri);
             // 从数据源解码得到图形信息
             Drawable drawable = ImageDecoder.decodeDrawable(source);

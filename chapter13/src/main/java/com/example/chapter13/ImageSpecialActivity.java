@@ -71,7 +71,7 @@ public class ImageSpecialActivity extends AppCompatActivity {
         try (InputStream is = getResources().openRawResource(imageId)) { // 从资源文件中获取输入流对象
             byte[] bytes = new byte[is.available()]; // 创建临时存放的字节数组
             is.read(bytes); // 从输入流中读取字节数组
-            // 利用Android9.0新增的ImageDecoder读取图片
+            // 利用Android 9.0新增的ImageDecoder读取图片
             ImageDecoder.Source source = ImageDecoder.createSource(ByteBuffer.wrap(bytes));
             showImageSource(source); // 显示指定来源的图像
         } catch (Exception e) {
@@ -82,7 +82,7 @@ public class ImageSpecialActivity extends AppCompatActivity {
     // 显示gif和webp图片
     private void showImage(int imageId) {
         try {
-            // 利用Android9.0新增的ImageDecoder读取图片
+            // 利用Android 9.0新增的ImageDecoder读取图片
             ImageDecoder.Source source = ImageDecoder.createSource(getResources(), imageId);
             showImageSource(source); // 显示指定来源的图像
         } catch (Exception e) {
