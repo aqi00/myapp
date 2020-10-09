@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         } else if (requestCode == R.id.btn_provider_mms % 65536) {
             if (PermissionUtil.checkGrant(grantResults)) { // 用户选择了同意授权
-                startActivity(new Intent(this, SendMmsActivity.class));
+                startActivity(new Intent(this, ProviderMmsActivity.class));
             } else {
                 Toast.makeText(this, "需要允许存储卡权限才能发送彩信噢", Toast.LENGTH_SHORT).show();
             }
