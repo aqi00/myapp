@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         TextView tv_hello = findViewById(R.id.tv_hello);
         tv_hello.setText("3秒后进入下个页面");
         // 延迟3秒（3000毫秒）后启动任务mGoNext
-        new Handler().postDelayed(mGoNext, 3000);
+        new Handler(Looper.myLooper()).postDelayed(mGoNext, 3000);
     }
 
     private Runnable mGoNext = new Runnable() {
