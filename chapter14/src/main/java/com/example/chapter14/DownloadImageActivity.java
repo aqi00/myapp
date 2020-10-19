@@ -10,6 +10,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -110,7 +111,7 @@ public class DownloadImageActivity extends AppCompatActivity {
         mHandler.post(mRefresh); // 启动下载进度的刷新任务
     }
 
-    private Handler mHandler = new Handler(); // 声明一个处理器对象
+    private Handler mHandler = new Handler(Looper.myLooper()); // 声明一个处理器对象
     // 定义一个下载进度的刷新任务
     private Runnable mRefresh = new Runnable() {
         @Override
