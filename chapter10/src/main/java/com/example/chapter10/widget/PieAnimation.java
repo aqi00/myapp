@@ -8,6 +8,7 @@ import android.graphics.Paint;
 import android.graphics.Paint.Style;
 import android.graphics.RectF;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -15,7 +16,7 @@ import android.view.View;
 public class PieAnimation extends View {
     private Paint mPaint = new Paint(); // 创建一个画笔对象
     private int mDrawingAngle = 0; // 当前绘制的角度
-    private Handler mHandler = new Handler(); // 声明一个处理器对象
+    private Handler mHandler = new Handler(Looper.myLooper()); // 声明一个处理器对象
     private boolean isRunning = false; // 是否正在播放动画
 
     public PieAnimation(Context context) {

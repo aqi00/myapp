@@ -3,6 +3,7 @@ package com.example.chapter10;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
@@ -39,7 +40,7 @@ public class HandlerPostActivity extends AppCompatActivity implements View.OnCli
     }
 
     private boolean isStarted = false; // 是否开始计数
-    private Handler mHandler = new Handler(); // 声明一个处理器对象
+    private Handler mHandler = new Handler(Looper.myLooper()); // 声明一个处理器对象
     private int mCount = 0; // 计数值
     // 定义一个计数任务
     private Runnable mCounter = new Runnable() {
