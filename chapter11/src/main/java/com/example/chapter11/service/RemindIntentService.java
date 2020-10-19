@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 
 import com.example.chapter11.GoodsLogisticsActivity;
@@ -19,7 +20,7 @@ public class RemindIntentService extends IntentService {
     private String mChannelId = "4"; // 通知渠道的编号
     private String mChannelName = "非常重要"; // 通知渠道的名称
     private int mImportance = NotificationManager.IMPORTANCE_HIGH; // 通知渠道的级别
-    private Handler mHandler = new Handler(); // 声明一个处理器对象
+    private Handler mHandler = new Handler(Looper.myLooper()); // 声明一个处理器对象
 
     public RemindIntentService() {
         super("RemindIntentService");

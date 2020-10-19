@@ -4,8 +4,6 @@ import android.app.IntentService;
 import android.content.Intent;
 import android.util.Log;
 
-import com.example.chapter11.BuildConfig;
-
 public class AsyncService extends IntentService {
     private static final String TAG = "AsyncService";
 

@@ -3,19 +3,16 @@ package com.example.chapter11.service;
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
-import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.graphics.BitmapFactory;
 import android.os.Binder;
 import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
-import android.os.SystemClock;
+import android.os.Looper;
 import android.util.Log;
 
-import com.example.chapter11.BuildConfig;
 import com.example.chapter11.MainActivity;
 import com.example.chapter11.R;
 
@@ -38,7 +35,7 @@ public class MusicService extends Service {
         return mBinder; // 返回该服务的粘合剂对象
     }
 
-    private Handler mHandler = new Handler(); // 声明一个处理器对象
+    private Handler mHandler = new Handler(Looper.myLooper()); // 声明一个处理器对象
     // 定义一个音乐播放任务
     private Runnable mPlay = new Runnable() {
         @Override

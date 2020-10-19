@@ -3,6 +3,7 @@ package com.example.chapter11;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.Message;
 import android.view.Gravity;
 import android.view.View;
@@ -76,7 +77,7 @@ public class HandlerMessageActivity extends AppCompatActivity implements View.On
     }
 
     // 创建一个处理器对象
-    private Handler mHandler = new Handler() {
+    private Handler mHandler = new Handler(Looper.myLooper()) {
         // 在收到消息时触发
         public void handleMessage(Message msg) {
             String desc = tv_message.getText().toString();

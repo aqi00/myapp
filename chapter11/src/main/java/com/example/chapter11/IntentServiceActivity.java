@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.TextView;
 
@@ -15,7 +16,7 @@ import com.example.chapter11.util.DateUtil;
 @SuppressLint("SetTextI18n")
 public class IntentServiceActivity extends AppCompatActivity implements View.OnClickListener {
     private TextView tv_intent;
-    private Handler mHandler = new Handler(); // 声明一个处理器对象
+    private Handler mHandler = new Handler(Looper.myLooper()); // 声明一个处理器对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
