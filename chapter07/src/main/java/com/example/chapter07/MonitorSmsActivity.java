@@ -10,6 +10,7 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.View;
@@ -83,7 +84,7 @@ public class MonitorSmsActivity extends AppCompatActivity implements View.OnClic
         smsManager.sendTextMessage(phoneNumber, null, message, sentPI, deliverPI);
     }
 
-    private Handler mHandler = new Handler(); // 声明一个处理器对象
+    private Handler mHandler = new Handler(Looper.myLooper()); // 声明一个处理器对象
     private SmsGetObserver mObserver; // 声明一个短信获取的观察器对象
     private static Uri mSmsUri; // 声明一个系统短信提供器的Uri对象
     private static String[] mSmsColumn; // 声明一个短信记录的字段数组
