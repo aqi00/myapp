@@ -3,6 +3,7 @@ package com.example.chapter12.fragment;
 import android.content.Context;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -62,7 +63,7 @@ public class AppliancesFragment extends Fragment implements OnRefreshListener {
         mHandler.postDelayed(mRefresh, 2000); // 延迟若干秒后启动刷新任务
     }
 
-    private Handler mHandler = new Handler(); // 声明一个处理器对象
+    private Handler mHandler = new Handler(Looper.myLooper()); // 声明一个处理器对象
     // 定义一个刷新任务
     private Runnable mRefresh = new Runnable() {
         @Override

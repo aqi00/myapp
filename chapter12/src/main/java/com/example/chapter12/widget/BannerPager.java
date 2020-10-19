@@ -2,6 +2,7 @@ package com.example.chapter12.widget;
 
 import android.content.Context;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.AttributeSet;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -106,7 +107,7 @@ public class BannerPager extends RelativeLayout implements View.OnClickListener 
         addView(view); // 将该布局视图添加到广告轮播条
     }
 
-    private Handler mHandler = new Handler(); // 声明一个处理器对象
+    private Handler mHandler = new Handler(Looper.myLooper()); // 声明一个处理器对象
     // 定义一个滚动任务
     private Runnable mScroll = new Runnable() {
         @Override

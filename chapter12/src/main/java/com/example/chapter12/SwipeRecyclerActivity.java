@@ -3,6 +3,7 @@ package com.example.chapter12;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Toast;
 
@@ -68,7 +69,7 @@ public class SwipeRecyclerActivity extends AppCompatActivity implements OnRefres
         mHandler.postDelayed(mRefresh, 2000); // 模拟网络耗时，延迟若干秒后启动刷新任务
     }
 
-    private Handler mHandler = new Handler(); // 声明一个处理器对象
+    private Handler mHandler = new Handler(Looper.myLooper()); // 声明一个处理器对象
     // 定义一个刷新任务
     private Runnable mRefresh = new Runnable() {
         @Override
