@@ -27,7 +27,10 @@ public class VideoPlayActivity extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
         if (v.getId() == R.id.btn_choose) {
             // 创建一个内容获取动作的意图（准备跳到系统视频库）
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            // ACTION_GET_CONTENT只可选择近期的视频
+            //Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            // ACTION_PICK可选择所有视频
+            Intent intent = new Intent(Intent.ACTION_PICK);
             intent.setType("video/*"); // 类型为视频
             startActivityForResult(intent, CHOOSE_CODE); // 打开系统视频库
         }
