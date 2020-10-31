@@ -1,7 +1,7 @@
 package com.example.chapter10.util;
 
 import android.content.Context;
-import android.util.DisplayMetrics;
+import android.graphics.Rect;
 import android.view.WindowManager;
 
 public class Utils {
@@ -37,30 +37,18 @@ public class Utils {
     public static int getScreenWidth(Context ctx) {
         // 从系统服务中获取窗口管理器
         WindowManager wm = (WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE);
-        DisplayMetrics dm = new DisplayMetrics();
-        // 从默认显示器中获取显示参数保存到dm对象中
-        wm.getDefaultDisplay().getMetrics(dm);
-        return dm.widthPixels; // 返回屏幕的宽度数值
+        // 获取当前屏幕的四周边界
+        Rect rect = wm.getCurrentWindowMetrics().getBounds();
+        return rect.width(); // 返回屏幕的宽度数值
     }
 
     // 获得屏幕的高度
     public static int getScreenHeight(Context ctx) {
         // 从系统服务中获取窗口管理器
         WindowManager wm = (WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE);
-        DisplayMetrics dm = new DisplayMetrics();
-        // 从默认显示器中获取显示参数保存到dm对象中
-        wm.getDefaultDisplay().getMetrics(dm);
-        return dm.heightPixels; // 返回屏幕的高度数值
-    }
-
-    // 获得屏幕的像素密度
-    public static float getScreenDensity(Context ctx) {
-        // 从系统服务中获取窗口管理器
-        WindowManager wm = (WindowManager) ctx.getSystemService(Context.WINDOW_SERVICE);
-        DisplayMetrics dm = new DisplayMetrics();
-        // 从默认显示器中获取显示参数保存到dm对象中
-        wm.getDefaultDisplay().getMetrics(dm);
-        return dm.density; // 返回屏幕的像素密度数值
+        // 获取当前屏幕的四周边界
+        Rect rect = wm.getCurrentWindowMetrics().getBounds();
+        return rect.height(); // 返回屏幕的高度数值
     }
 
 }
