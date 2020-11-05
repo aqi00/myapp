@@ -5,9 +5,9 @@ public class UrlConstant {
     public static final String REQUEST_URL = "http://192.168.1.7:8080/NetServer";
     //public static final String REQUEST_URL = "http://192.168.1.2:6001/NetServer";
     // 检查应用更新的服务地址
-    public static final String UPLOAD_URL = REQUEST_URL + "/uploadServlet";
-    // 上传文件的服务地址
     public static final String CHECK_UPDATE_URL = REQUEST_URL + "/checkUpdate";
+    // 上传文件的服务地址
+    public static final String UPLOAD_URL = REQUEST_URL + "/uploadServlet";
     // 获取旅游图片的服务地址
     public static final String GET_PHOTO_URL = REQUEST_URL + "/getPhoto";
     // 根据经纬度查询详细地址的网址（天地图）
