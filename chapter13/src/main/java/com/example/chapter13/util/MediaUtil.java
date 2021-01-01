@@ -54,7 +54,7 @@ public class MediaUtil {
         String duration = retriever.extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION);
         Log.d(TAG, "duration="+duration);
         int pos = (Integer.parseInt(duration)/1000)>1 ? 1 : 0;
-        // 获取并返回指定时间的帧图
-        return retriever.getFrameAtTime(pos * 1000, MediaMetadataRetriever.OPTION_CLOSEST);
+        // 获取指定时间的帧图，注意getFrameAtTime方法的时间单位是微秒
+        return retriever.getFrameAtTime(pos * 1000 * 1000);
     }
 }
