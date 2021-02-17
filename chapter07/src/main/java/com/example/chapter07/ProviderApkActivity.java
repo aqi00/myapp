@@ -60,7 +60,7 @@ public class ProviderApkActivity extends AppCompatActivity {
         mApkList.clear(); // 清空安装包列表
         // 查找存储卡上所有的apk文件，其中mime_type指定了APK的文件类型，或者判断文件路径是否以.apk结尾
         Cursor cursor = getContentResolver().query(mFilesUri, mFilesColumn,
-                "mime_type=\"application/vnd.android.package-archive\" or _data like '%.apk'", null, null);
+                "mime_type='application/vnd.android.package-archive' or _data like '%.apk'", null, null);
         if (cursor != null) {
             // 下面遍历结果集，并逐个添加到安装包列表。简单起见只挑选前十个文件
             for (int i=0; i<10 && cursor.moveToNext(); i++) {
