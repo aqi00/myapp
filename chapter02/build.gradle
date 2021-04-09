@@ -4,7 +4,7 @@ android {
     // 指定编译用的SDK版本号。比如30表示使用Android 11.0编译
     compileSdkVersion 30
     // 指定编译工具的版本号。这里的头两位数字必须与compileSdkVersion保持一致，具体的版本号可在sdk安装目录的“sdk\build-tools”下找到
-    buildToolsVersion "30.0.2"
+    buildToolsVersion "30.0.3"
 
     defaultConfig {
         // 指定该模块的应用编号，也就是App的包名
