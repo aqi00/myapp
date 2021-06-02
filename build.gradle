@@ -8,7 +8,7 @@ buildscript {
         maven { url 'https://maven.aliyun.com/repository/gradle-plugin'}
         maven { url 'https://maven.aliyun.com/repository/public'}
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
         // 配置gradle插件版本，下面的版本号就是Android Studio的版本号
@@ -27,7 +27,7 @@ allprojects {
         maven { url 'https://maven.aliyun.com/repository/gradle-plugin'}
         maven { url 'https://maven.aliyun.com/repository/public'}
         google()
-        jcenter()
+        mavenCentral()
         
     }
 }
