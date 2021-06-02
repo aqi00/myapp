@@ -65,8 +65,8 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
                 Toast.makeText(this, "请输入数字", Toast.LENGTH_SHORT).show();
                 return false;
             }
-            if (operator.equals("÷") && Double.parseDouble(secondNum) == 0) { // 被除数为零
-                Toast.makeText(this, "被除数不能为零", Toast.LENGTH_SHORT).show();
+            if (operator.equals("÷") && Double.parseDouble(secondNum) == 0) { // 除数为零
+                Toast.makeText(this, "除数不能为零", Toast.LENGTH_SHORT).show();
                 return false;
             }
         } else if (v.getId() == R.id.btn_plus || v.getId() == R.id.btn_minus // 点击了加、减、乘、除按钮
@@ -145,16 +145,16 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
             operator = inputText; // 运算符
             refreshText(showText + operator);
         } else if (v.getId() == R.id.btn_equal) { // 点击了等号按钮
-            double caculate_result = caculateFour(); // 加减乘除四则运算
-            refreshOperate(String.valueOf(caculate_result));
+            double calculate_result = calculateFour(); // 加减乘除四则运算
+            refreshOperate(String.valueOf(calculate_result));
             refreshText(showText + "=" + result);
         } else if (v.getId() == R.id.ib_sqrt) { // 点击了开根号按钮
-            double caculate_result = Math.sqrt(Double.parseDouble(firstNum)); // 开平方运算
-            refreshOperate(String.valueOf(caculate_result));
+            double calculate_result = Math.sqrt(Double.parseDouble(firstNum)); // 开平方运算
+            refreshOperate(String.valueOf(calculate_result));
             refreshText(showText + "√=" + result);
         } else if (v.getId() == R.id.btn_reciprocal) { // 点击了求倒数按钮
-            double caculate_result = 1.0 / Double.parseDouble(firstNum); // 求倒数运算
-            refreshOperate(String.valueOf(caculate_result));
+            double calculate_result = 1.0 / Double.parseDouble(firstNum); // 求倒数运算
+            refreshOperate(String.valueOf(calculate_result));
             refreshText(showText + "/=" + result);
         } else { // 点击了其他按钮，包括数字和小数点
             if (result.length() > 0 && operator.equals("")) { // 上次的运算结果已经出来了
@@ -194,19 +194,19 @@ public class CalculatorActivity extends AppCompatActivity implements View.OnClic
     }
 
     // 加减乘除四则运算，返回计算结果
-    private double caculateFour() {
-        double caculate_result = 0;
+    private double calculateFour() {
+        double calculate_result = 0;
         if (operator.equals("＋")) { // 当前是相加运算
-            caculate_result = Double.parseDouble(firstNum) + Double.parseDouble(secondNum);
+            calculate_result = Double.parseDouble(firstNum) + Double.parseDouble(secondNum);
         } else if (operator.equals("－")) { // 当前是相减运算
-            caculate_result = Double.parseDouble(firstNum) - Double.parseDouble(secondNum);
+            calculate_result = Double.parseDouble(firstNum) - Double.parseDouble(secondNum);
         } else if (operator.equals("×")) { // 当前是相乘运算
-            caculate_result = Double.parseDouble(firstNum) * Double.parseDouble(secondNum);
+            calculate_result = Double.parseDouble(firstNum) * Double.parseDouble(secondNum);
         } else if (operator.equals("÷")) { // 当前是相除运算
-            caculate_result = Double.parseDouble(firstNum) / Double.parseDouble(secondNum);
+            calculate_result = Double.parseDouble(firstNum) / Double.parseDouble(secondNum);
         }
-        Log.d(TAG, "caculate_result=" + caculate_result); // 把运算结果打印到日志中
-        return caculate_result;
+        Log.d(TAG, "calculate_result=" + calculate_result); // 把运算结果打印到日志中
+        return calculate_result;
     }
 
 }
