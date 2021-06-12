@@ -51,6 +51,7 @@ public class ContentWriteActivity extends AppCompatActivity implements View.OnCl
         name.put("age", user.age);
         name.put("height", user.height);
         name.put("weight", user.weight);
+        name.put("married", 0);
         name.put("update_time", DateUtil.getNowDateTime(""));
         // 通过内容解析器往指定Uri添加用户信息
         getContentResolver().insert(UserInfoContent.CONTENT_URI, name);
