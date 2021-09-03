@@ -17,7 +17,7 @@ public class AppWriteActivity extends AppCompatActivity implements View.OnClickL
     private EditText et_age;
     private EditText et_height;
     private EditText et_weight;
-    private boolean bMarried = false;
+    private boolean isMarried = false;
     private String[] typeArray = {"未婚", "已婚"};
 
     @Override
@@ -35,7 +35,7 @@ public class AppWriteActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        bMarried = isChecked;
+        isMarried = isChecked;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class AppWriteActivity extends AppCompatActivity implements View.OnClickL
             app.infoMap.put("age", age);
             app.infoMap.put("height", height);
             app.infoMap.put("weight", weight);
-            app.infoMap.put("married", typeArray[!bMarried ? 0 : 1]);
+            app.infoMap.put("married", typeArray[!isMarried ? 0 : 1]);
             app.infoMap.put("update_time", DateUtil.getNowDateTime("yyyy-MM-dd HH:mm:ss"));
             ToastUtil.show(this, "数据已写入全局内存");
         }

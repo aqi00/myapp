@@ -36,7 +36,7 @@ public class LoginShareActivity extends AppCompatActivity implements View.OnClic
     private CheckBox ck_remember; // 声明一个复选框对象
 
     private int mRequestCode = 0; // 跳转页面时的请求代码
-    private boolean bRemember = false; // 是否记住密码
+    private boolean isRemember = false; // 是否记住密码
     private String mPassword = "111111"; // 默认密码
     private String mVerifyCode; // 验证码
     private SharedPreferences mShared; // 声明一个共享参数对象
@@ -96,7 +96,7 @@ public class LoginShareActivity extends AppCompatActivity implements View.OnClic
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             if (buttonView.getId() == R.id.ck_remember) {
-                bRemember = isChecked;
+                isRemember = isChecked;
             }
         }
     }
@@ -209,7 +209,7 @@ public class LoginShareActivity extends AppCompatActivity implements View.OnClic
         AlertDialog alert = builder.create();
         alert.show(); // 显示提醒对话框
         // 如果勾选了“记住密码”，就把手机号码和密码都保存到共享参数中
-        if (bRemember) {
+        if (isRemember) {
             SharedPreferences.Editor editor = mShared.edit(); // 获得编辑器的对象
             editor.putString("phone", et_phone.getText().toString()); // 添加名叫phone的手机号码
             editor.putString("password", et_password.getText().toString()); // 添加名叫password的密码

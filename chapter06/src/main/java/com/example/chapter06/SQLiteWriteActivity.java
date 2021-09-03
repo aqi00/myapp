@@ -20,7 +20,7 @@ public class SQLiteWriteActivity extends AppCompatActivity implements View.OnCli
     private EditText et_age;
     private EditText et_height;
     private EditText et_weight;
-    private boolean bMarried = false;
+    private boolean isMarried = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +37,7 @@ public class SQLiteWriteActivity extends AppCompatActivity implements View.OnCli
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        bMarried = isChecked;
+        isMarried = isChecked;
     }
 
     @Override
@@ -80,7 +80,7 @@ public class SQLiteWriteActivity extends AppCompatActivity implements View.OnCli
             info.age = Integer.parseInt(age);
             info.height = Long.parseLong(height);
             info.weight = Float.parseFloat(weight);
-            info.married = bMarried;
+            info.married = isMarried;
             info.update_time = DateUtil.getNowDateTime("yyyy-MM-dd HH:mm:ss");
             mHelper.insert(info); // 执行数据库帮助器的插入操作
             ToastUtil.show(this, "数据已写入SQLite数据库");

@@ -22,7 +22,7 @@ public class FileWriteActivity extends AppCompatActivity implements View.OnClick
     private EditText et_age;
     private EditText et_height;
     private EditText et_weight;
-    private boolean bMarried = false;
+    private boolean isMarried = false;
     private String[] typeArray = {"未婚", "已婚"};
     private String mPath; // 私有目录路径
     private TextView tv_path;
@@ -45,7 +45,7 @@ public class FileWriteActivity extends AppCompatActivity implements View.OnClick
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        bMarried = isChecked;
+        isMarried = isChecked;
     }
 
     @Override
@@ -69,7 +69,7 @@ public class FileWriteActivity extends AppCompatActivity implements View.OnClick
                 return;
             }
             String content = String.format("　姓名：%s\n　年龄：%s\n　身高：%scm\n　体重：%skg\n　婚否：%s\n　注册时间：%s\n",
-                    name, age, height, weight, typeArray[bMarried?1:0], DateUtil.getNowDateTime("yyyy-MM-dd HH:mm:ss"));
+                    name, age, height, weight, typeArray[isMarried?1:0], DateUtil.getNowDateTime("yyyy-MM-dd HH:mm:ss"));
             String file_path = mPath + DateUtil.getNowDateTime("") + ".txt";
             FileUtil.saveText(file_path, content); // 把字符串内容保存为文本文件
             tv_path.setText("用户注册信息文件的保存路径为：\n" + file_path);

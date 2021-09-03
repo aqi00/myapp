@@ -19,7 +19,7 @@ public class ShareWriteActivity extends AppCompatActivity implements View.OnClic
 	private EditText et_age;
 	private EditText et_height;
 	private EditText et_weight;
-	private boolean bMarried = false;
+	private boolean isMarried = false;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +38,7 @@ public class ShareWriteActivity extends AppCompatActivity implements View.OnClic
 
 	@Override
 	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-		bMarried = isChecked;
+		isMarried = isChecked;
 	}
 
 	@Override
@@ -67,7 +67,7 @@ public class ShareWriteActivity extends AppCompatActivity implements View.OnClic
 			editor.putInt("age", Integer.parseInt(age)); // 添加一个名叫age的整型参数
 			editor.putLong("height", Long.parseLong(height)); // 添加一个名叫height的长整型参数
 			editor.putFloat("weight", Float.parseFloat(weight)); // 添加一个名叫weight的浮点数参数
-			editor.putBoolean("married", bMarried); // 添加一个名叫married的布尔型参数
+			editor.putBoolean("married", isMarried); // 添加一个名叫married的布尔型参数
 			editor.putString("update_time", DateUtil.getNowDateTime("yyyy-MM-dd HH:mm:ss"));
 			editor.commit(); // 提交编辑器中的修改
 			ToastUtil.show(this, "数据已写入共享参数");
