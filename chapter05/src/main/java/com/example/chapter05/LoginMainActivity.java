@@ -35,7 +35,7 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
     private CheckBox ck_remember; // 声明一个复选框对象
 
     private int mRequestCode = 0; // 跳转页面时的请求代码
-    private boolean bRemember = false; // 是否记住密码
+    private boolean isRemember = false; // 是否记住密码
     private String mPassword = "111111"; // 默认密码
     private String mVerifyCode; // 验证码
 
@@ -86,7 +86,7 @@ public class LoginMainActivity extends AppCompatActivity implements View.OnClick
         @Override
         public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             if (buttonView.getId() == R.id.ck_remember) {
-                bRemember = isChecked;
+                isRemember = isChecked;
             }
         }
     }
