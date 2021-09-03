@@ -88,7 +88,7 @@ public class LinearDynamicAdapter extends RecyclerView.Adapter<ViewHolder>
         holder.iv_pic.setImageResource(item.pic_id);
         holder.tv_title.setText(item.title);
         holder.tv_desc.setText(item.desc);
-        holder.tv_delete.setVisibility((item.bPressed) ? View.VISIBLE : View.GONE);
+        holder.tv_delete.setVisibility((item.isPressed) ? View.VISIBLE : View.GONE);
         holder.tv_delete.setId(item.id * 10 + DELETE);
         holder.tv_delete.setOnClickListener(this);
         holder.ll_item.setId(item.id * 10 + CLICK);

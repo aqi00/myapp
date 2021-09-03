@@ -76,7 +76,7 @@ public class RecyclerDynamicActivity extends AppCompatActivity implements View.O
     // 一旦长按循环适配器的列表项，就触发长按监听器的onItemLongClick方法
     public void onItemLongClick(View view, int position) {
         NewsInfo item = mPublicList.get(position);
-        item.bPressed = !item.bPressed;
+        item.isPressed = !item.isPressed;
         mPublicList.set(position, item);
         mAdapter.notifyItemChanged(position); // 通知适配器列表在第几项发生变更
     }

@@ -9,7 +9,7 @@ public class NewsInfo {
     public int pic_id; // 图片的资源编号
     public String title; // 标题
     public String desc; // 描述
-    public boolean bPressed; // 是否按下
+    public boolean isPressed; // 是否按下
     public int id; // 商品信息编号
     private static int seq = 0; // 序号
 
@@ -17,7 +17,7 @@ public class NewsInfo {
         this.pic_id = pic_id;
         this.title = title;
         this.desc = desc;
-        this.bPressed = false;
+        this.isPressed = false;
         this.id = this.seq;
         this.seq++;
     }
