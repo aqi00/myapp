@@ -11,19 +11,28 @@ import com.example.chapter14.util.HttpUtil;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+
 // 根据经纬度获取详细地址的异步任务
 public class GetAddressTask extends AsyncTask<Location, Void, String> {
     private final static String TAG = "GetAddressTask";
-//    public GetAddressTask() {
-//        super();
-//    }
+    private String mQueryUrl = "https://api.tianditu.gov.cn/geocoder?postStr=%s&type=geocode&tk=253b3bd69713d4bdfdc116255f379841";
 
     // 线程正在后台处理
     protected String doInBackground(Location... params) {
         Location location = params[0];
-        // 把经度和纬度代入到URL地址。天地图的地址查询url在UrlConstant.java中定义
-        String url = String.format(UrlConstant.GET_ADDRESS_URL,
-                location.getLongitude(), location.getLatitude());
+        //String url = String.format(mQueryUrl, mLocation.getLongitude(), mLocation.getLatitude());
+        String param = String.format("{'lon':%f,'lat':%f,'ver':1}", location.getLongitude(), location.getLatitude());
+        try {
+            param = URLEncoder.encode(param, "utf8");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        String url = String.format(mQueryUrl, param);
+//        // 把经度和纬度代入到URL地址。天地图的地址查询url在UrlConstant.java中定义
+//        String url = String.format(UrlConstant.GET_ADDRESS_URL,
+//                location.getLongitude(), location.getLatitude());
         Log.d(TAG, "url = " + url);
         String resp = HttpUtil.get(url, null); // 发送HTTP请求信息，并获得HTTP应答内容
         Log.d(TAG, "resp = " + resp);
