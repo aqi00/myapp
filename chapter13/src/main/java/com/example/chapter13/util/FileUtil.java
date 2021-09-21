@@ -1,10 +1,13 @@
 package com.example.chapter13.util;
 
 import android.content.Context;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Build;
+import android.provider.MediaStore;
+import android.util.Log;
 
 import androidx.core.content.FileProvider;
 
@@ -15,6 +18,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class FileUtil {
+    private final static String TAG = "FileUtil";
 
     // 把字符串保存到指定路径的文本文件
     public static void saveText(String path, String txt) {
@@ -98,6 +102,33 @@ public class FileUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    // 从content://media/external/file/这样的Uri中获取文件路径
+    public static String getPathFromContentUri(Context context, Uri uri) {
+        String path = uri.toString();
+        if (path.startsWith("content://")) {
+            String[] proj = new String[]{ // 媒体库的字段名称数组
+                    MediaStore.Video.Media._ID, // 编号
+                    MediaStore.Video.Media.TITLE, // 标题
+                    MediaStore.Video.Media.SIZE, // 文件大小
+                    MediaStore.Video.Media.MIME_TYPE, // 文件类型
+                    MediaStore.Video.Media.DATA // 文件大小
+            };
+            try (Cursor cursor = context.getContentResolver().query(uri,
+                    proj, null, null, null)) {
+                cursor.moveToFirst(); // 把游标移动到开头
+                if (cursor.getString(4) != null) {
+                    path = cursor.getString(4);
+                }
+                Log.d(TAG, cursor.getLong(0) + " " + cursor.getString(1)
+                        + " " + cursor.getLong(2) + " " + cursor.getString(3)
+                        + " " + cursor.getString(4));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return path;
     }
 
 }

@@ -14,6 +14,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.chapter13.util.FileUtil;
 import com.example.chapter13.util.MediaUtil;
 
 public class VideoChooseActivity extends AppCompatActivity implements View.OnClickListener {
@@ -41,16 +42,17 @@ public class VideoChooseActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         if (v.getId() == R.id.btn_choose) {
             // 创建一个内容获取动作的意图（准备跳到系统视频库）
-            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-            intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true); // 是否允许多选
-            intent.setType("video/*"); // 类型为视频
+            Intent intent = new Intent(Intent.ACTION_PICK,
+                    MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+            intent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "video/*");
             startActivityForResult(intent, CHOOSE_CODE); // 打开系统视频库
         } else if (v.getId() == R.id.btn_combine) {
             openSelectDialog(); // 打开选择对话框（要录像还是去视频库）
         } else if (v.getId() == R.id.rl_video) {
+            String realPath = FileUtil.getPathFromContentUri(this, mVideoUri);
             // 创建一个内容获取动作的意图（准备跳到系统播放器）
             Intent intent = new Intent(Intent.ACTION_VIEW);
-            intent.setDataAndType(mVideoUri, "video/*"); // 类型为视频
+            intent.setDataAndType(Uri.parse(realPath), "video/*"); // 类型为视频
             startActivity(intent); // 打开系统的视频播放器
         }
     }
@@ -84,9 +86,9 @@ public class VideoChooseActivity extends AppCompatActivity implements View.OnCli
         Intent recordIntent = new Intent(MediaStore.ACTION_VIDEO_CAPTURE);
         Intent[] intentArray = new Intent[] { recordIntent };
         // 声明视频库的打开行为
-        Intent videoIntent = new Intent(Intent.ACTION_GET_CONTENT);
-        videoIntent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, false); // 是否允许多选
-        videoIntent.setType("video/*"); // 类型为视频
+        Intent videoIntent = new Intent(Intent.ACTION_PICK,
+                MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        videoIntent.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "video/*");
         // 弹出含摄像机和视频库在内的列表对话框
         Intent chooserIntent = new Intent(Intent.ACTION_CHOOSER);
         chooserIntent.putExtra(Intent.EXTRA_TITLE, "请录像或选择视频");
