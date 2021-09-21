@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 public class EditFocusActivity extends AppCompatActivity implements View.OnClickListener, View.OnFocusChangeListener {
     private EditText et_phone; // 声明一个编辑框对象
+    private EditText et_password; // 声明一个编辑框对象
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +19,12 @@ public class EditFocusActivity extends AppCompatActivity implements View.OnClick
         // 从布局文件中获取名叫et_phone的手机号码编辑框
         et_phone = findViewById(R.id.et_phone);
         // 从布局文件中获取名叫et_password的密码编辑框
-        EditText et_password = findViewById(R.id.et_password);
+        et_password = findViewById(R.id.et_password);
         // 给密码编辑框注册点击事件监听器
         et_password.setOnClickListener(this);
         // 给密码编辑框注册一个焦点变化监听器，一旦焦点发生变化，就触发监听器的onFocusChange方法
         et_password.setOnFocusChangeListener(this);
+        findViewById(R.id.btn_login).setOnClickListener(this);
     }
 
     // 焦点变更事件的处理方法，hasFocus表示当前控件是否获得焦点。
@@ -49,6 +51,13 @@ public class EditFocusActivity extends AppCompatActivity implements View.OnClick
                 // 手机号码编辑框请求焦点，也就是把光标移回手机号码编辑框
                 et_phone.requestFocus();
                 Toast.makeText(this, "请输入11位手机号码", Toast.LENGTH_SHORT).show();
+            }
+        } else if (v.getId() == R.id.btn_login) {
+            String password = et_password.getText().toString();
+            if (TextUtils.isEmpty(password) || password.length()<11) { // 密码不足6位
+                // 密码编辑框请求焦点，也就是把光标移回密码编辑框
+                et_password.requestFocus();
+                Toast.makeText(this, "请输入6位密码", Toast.LENGTH_SHORT).show();
             }
         }
     }
