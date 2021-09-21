@@ -20,6 +20,7 @@ public class ChangeDirectionActivity extends AppCompatActivity {
     }
 
     // 在配置项变更时触发。比如屏幕方向发生变更等等
+    // 有的手机需要在系统的“设置→显示”菜单开启“自动旋转屏幕”，或者从顶部下拉，找到“自动旋转”图标并开启
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
