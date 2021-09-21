@@ -35,21 +35,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, JsonConvertActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_http_get) {
-            if (PermissionUtil.checkPermission(this, Manifest.permission.ACCESS_FINE_LOCATION, R.id.btn_http_get % 65536)) {
+            if (PermissionUtil.checkPermission(this, Manifest.permission.ACCESS_FINE_LOCATION, (int) v.getId() % 65536)) {
                 startActivity(new Intent(this, HttpGetActivity.class));
             }
         } else if (v.getId() == R.id.btn_http_post) {
             Intent intent = new Intent(this, HttpPostActivity.class);
             startActivity(intent);
         } else if (v.getId() == R.id.btn_download_apk) {
-            Intent intent = new Intent(this, DownloadApkActivity.class);
-            startActivity(intent);
+            if (PermissionUtil.checkPermission(this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, (int) v.getId() % 65536)) {
+                startActivity(new Intent(this, DownloadApkActivity.class));
+            }
         } else if (v.getId() == R.id.btn_download_image) {
-            Intent intent = new Intent(this, DownloadImageActivity.class);
-            startActivity(intent);
+            if (PermissionUtil.checkPermission(this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, (int) v.getId() % 65536)) {
+                startActivity(new Intent(this, DownloadImageActivity.class));
+            }
         } else if (v.getId() == R.id.btn_http_upload) {
-            Intent intent = new Intent(this, HttpUploadActivity.class);
-            startActivity(intent);
+            if (PermissionUtil.checkPermission(this, new String[] {Manifest.permission.WRITE_EXTERNAL_STORAGE}, (int) v.getId() % 65536)) {
+                startActivity(new Intent(this, HttpUploadActivity.class));
+            }
         } else if (v.getId() == R.id.btn_http_image) {
             Intent intent = new Intent(this, HttpImageActivity.class);
             startActivity(intent);
@@ -72,6 +75,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 startActivity(new Intent(this, HttpGetActivity.class));
             } else {
                 Toast.makeText(this, "需要允许定位权限才能开始定位噢", Toast.LENGTH_SHORT).show();
+            }
+        } else if (requestCode == R.id.btn_download_apk % 65536) {
+            if (PermissionUtil.checkGrant(grantResults)) {
+                startActivity(new Intent(this, HttpUploadActivity.class));
+            } else {
+                Toast.makeText(this, "需要允许存储卡权限才能下载APK噢", Toast.LENGTH_SHORT).show();
+            }
+        } else if (requestCode == R.id.btn_download_image % 65536) {
+            if (PermissionUtil.checkGrant(grantResults)) {
+                startActivity(new Intent(this, HttpUploadActivity.class));
+            } else {
+                Toast.makeText(this, "需要允许存储卡权限才能下载图片噢", Toast.LENGTH_SHORT).show();
             }
         } else if (requestCode == R.id.btn_http_upload % 65536) {
             if (PermissionUtil.checkGrant(grantResults)) {
