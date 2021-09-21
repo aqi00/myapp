@@ -15,7 +15,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="360dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="简单计算器"
@@ -25,13 +25,13 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#ffffff"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_result"
-                    android:layout_width="match_parent"
+                    android:layout_width="360dp"
                     android:layout_height="wrap_content"
+                    android:background="#ffffff"
                     android:gravity="right|bottom"
                     android:lines="3"
                     android:maxLines="3"
