@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.GridLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +18,7 @@ import com.example.chapter06.bean.GoodsInfo;
 import com.example.chapter06.database.CartDBHelper;
 import com.example.chapter06.database.GoodsDBHelper;
 import com.example.chapter06.util.ToastUtil;
+import com.example.chapter06.util.Utils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -81,6 +83,9 @@ public class ShoppingChannelActivity extends AppCompatActivity implements View.O
     }
 
     private void showGoods() {
+        int screenWidth = Utils.getScreenWidth(this);
+        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
+                screenWidth/2, LinearLayout.LayoutParams.WRAP_CONTENT);
         gl_channel.removeAllViews(); // 移除下面的所有子视图
         // 查询商品数据库中的所有商品记录
         List<GoodsInfo> goodsArray = mGoodsHelper.query("1=1");
@@ -108,7 +113,7 @@ public class ShoppingChannelActivity extends AppCompatActivity implements View.O
                     addToCart(info.rowid, info.name); // 添加到购物车
                 }
             });
-            gl_channel.addView(view); // 把商品视图添加到网格布局
+            gl_channel.addView(view, params); // 把商品视图添加到网格布局
         }
     }
 

@@ -86,7 +86,7 @@ public class LoginShareActivity extends AppCompatActivity implements View.OnClic
                 tv_password.setText("　验证码：");
                 et_password.setHint("请输入验证码");
                 btn_forget.setText("获取验证码");
-                ck_remember.setVisibility(View.INVISIBLE);
+                ck_remember.setVisibility(View.GONE);
             }
         }
     }
