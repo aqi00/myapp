@@ -10,8 +10,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 
-import com.example.chapter11.BuildConfig;
-
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 
@@ -49,9 +47,9 @@ public class NotifyUtil {
     private static void showBadgeOfEMUI(Context ctx, int count) {
         try {
             Bundle extra = new Bundle(); // 创建一个包裹对象
-            extra.putString("package", BuildConfig.APPLICATION_ID); // 应用的包名
+            extra.putString("package", ctx.getPackageName()); // 应用的包名
             // 应用的首屏页面路径
-            extra.putString("class", BuildConfig.APPLICATION_ID+".MainActivity");
+            extra.putString("class", ctx.getPackageName()+".MainActivity");
             extra.putInt("badgenumber", count); // 应用的消息数量
             Uri uri = Uri.parse("content://com.huawei.android.launcher.settings/badge/");
             // 通过内容解析器调用华为内核的消息角标服务
