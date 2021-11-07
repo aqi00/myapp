@@ -3,7 +3,6 @@ package com.example.chapter07.provider;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
-import com.example.chapter07.BuildConfig;
 import com.example.chapter07.database.UserDBHelper;
 
 public class UserInfoContent implements BaseColumns {

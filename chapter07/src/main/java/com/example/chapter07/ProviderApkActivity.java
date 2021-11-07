@@ -135,7 +135,7 @@ public class ProviderApkActivity extends AppCompatActivity {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             // 通过FileProvider获得安装包文件的Uri访问方式
             uri = FileProvider.getUriForFile(this,
-                    "com.example.chapter07.fileProvider", new File(path));
+                    getPackageName()+".fileProvider", new File(path));
         }
         Intent intent = new Intent(Intent.ACTION_VIEW); // 创建一个浏览动作的意图
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK); // 另外开启新页面

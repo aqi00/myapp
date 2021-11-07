@@ -57,7 +57,7 @@
         <!-- 兼容Android7.0，把访问文件的Uri方式改为FileProvider -->
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.example.chapter07.fileProvider"
+            android:authorities="@string/file_provider"
             android:exported="false"
             android:grantUriPermissions="true">
             <meta-data

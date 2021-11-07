@@ -8,8 +8,6 @@ import android.os.Build;
 
 import androidx.core.content.FileProvider;
 
-import com.example.chapter07.BuildConfig;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -140,7 +138,7 @@ public class FileUtil {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 // 通过FileProvider获得文件的Uri访问方式
                 uri = FileProvider.getUriForFile(ctx,
-                        "com.example.chapter07.fileProvider", new File(path));
+                        ctx.getPackageName()+".fileProvider", new File(path));
             }
         } catch (Exception e) { // 该路径可能不存在
             e.printStackTrace();
