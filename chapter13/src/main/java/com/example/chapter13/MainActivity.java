@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         // requestCode不能为负数，也不能大于2的16次方即65536
         if (requestCode == R.id.btn_photo_take % 65536) {
             if (PermissionUtil.checkGrant(grantResults)) {
